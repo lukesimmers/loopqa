@@ -1,20 +1,23 @@
 // data/testData.ts
 
 export interface LoginCredentials {
-    email: string;
+    username: string;
     password: string;
   }
   
   export const loginCredentials: LoginCredentials = {
-    email: 'admin',
-    password: 'password123',
+    username: process.env.ADMIN_USERNAME!,
+    password: process.env.ADMIN_PASSWORD!,
   };
   
+ 
   export interface TestCase {
     app: string;
     task: string;
-    status: string;
-    tags: string[];
+    status?: string;
+    tags?: string[];
+    assignee?: string;
+    date?: string;
   }
   
   export const testCases: TestCase[] = [
