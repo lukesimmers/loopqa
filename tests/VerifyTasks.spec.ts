@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
 import { AppPage } from '../pages/AppPage';
+import { LoginPage } from '../pages/LoginPage';
 import { loginCredentials, testCases } from '../data/testData';
 
 test.describe('Demo App Task Board Tests', () => {
