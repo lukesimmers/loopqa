@@ -1,0 +1,40 @@
+jobs:
+  test-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set up environment variables for QA
+        run: echo "NODE_ENV=qa" >> $GITHUB_ENV
+
+      - name: Run Playwright tests for QA
+        run: npx playwright test
+
+  test-prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set up environment variables for Production
+        run: echo "NODE_ENV=prod" >> $GITHUB_ENV
+
+      - name: Run Playwright tests for Production
+        run: npx playwright test
