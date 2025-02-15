@@ -86,14 +86,14 @@ export class AppPage {
     // Verify assignee if provided.
     if (options.assignee) {
       // Assignee's name is located within a div that also contains the avatar icon (svg.lucide-user).
-      const assigneeLocator = taskLocator.locator('div:has(svg.lucide-user)');
+      const assigneeLocator = taskLocator.locator('div:has(> svg.lucide-user)');
       await expect(assigneeLocator).toHaveText(options.assignee);
     }
 
     // Verify date if provided.
     if (options.date) {
       // The date is located within a div that also contains a calendar icon (svg.lucide-calendar).
-      const dateLocator = taskLocator.locator('div:has(svg.lucide-calendar)');
+      const dateLocator = taskLocator.locator('div:has(> svg.lucide-calendar)');
       await expect(dateLocator).toHaveText(options.date);
     }
   }

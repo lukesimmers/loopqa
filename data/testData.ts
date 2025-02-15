@@ -15,6 +15,7 @@ export interface LoginCredentials {
     app: string;
     task: string;
     status: string;
+    description?: string;
     tags?: string[];
     assignee?: string;
     date?: string;
@@ -64,11 +65,58 @@ export interface LoginCredentials {
         tags: ['Design'],
     },
 
-    // Failure Test Case
+    // Other Feature Test Cases
     // {
-    //     app: 'Mobile Application',
-    //     task: 'Incorporate rebrand coloration',
-    //     status: 'In Progress',
-    //     tags: ['Design', 'High Priority'],
-    // }
+    //   app: 'Mobile Application',
+    //   task: 'App icon design',
+    //   status: 'Done',
+    //   assignee: 'Emma Wilson'
+    // },
+    // {
+    //   app: 'Mobile Application',
+    //   task: 'App icon design',
+    //   status: 'Done',
+    //   date: '3/14/2024',
+    // },
+
+    // Failure Test Cases
+    // {
+    //   app: 'Mobile Application',
+    //   task: 'App icon desing',
+    //   status: 'Done',
+    //   tags: ['Design'],
+    // },
+    // {
+    //   app: 'Mobile Application',
+    //   task: 'App icon design',
+    //   status: 'In Progress',
+    //   tags: ['Design'],
+    // },
+    // {
+    //   app: 'Mobile Application',
+    //   task: 'App icon design',
+    //   status: 'Done',
+    //   tags: ['Desing'],
+    // },
+    // {
+    //   app: 'Mobile Application',
+    //   task: 'App icon design',
+    //   status: 'Done',
+    //   tags: ['Design'],
+    //   date: '2022-01-01',
+    // },
+    // {
+    //   app: 'Mobile Application',
+    //   task: 'App icon design',
+    //   status: 'Done',
+    //   tags: ['Design'],
+    //   assignee: 'John Doe',
+    // },
+    // {
+    //   app: 'Mobile Application',
+    //   task: 'App icon design',
+    //   status: 'Done',
+    //   tags: ['Design'],
+    //   description: 'Design a new app icon.',
+    // },
   ];
