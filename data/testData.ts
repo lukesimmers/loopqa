@@ -62,5 +62,13 @@ export interface LoginCredentials {
         task: 'App icon design',
         status: 'Done',
         tags: ['Design'],
-    }
+    },
+
+    // Failure Test Case
+    // {
+    //     app: 'Mobile Application',
+    //     task: 'Incorporate rebrand coloration',
+    //     status: 'In Progress',
+    //     tags: ['Design', 'High Priority'],
+    // }
   ];

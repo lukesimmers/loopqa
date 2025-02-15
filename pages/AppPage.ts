@@ -40,7 +40,7 @@ export class AppPage {
    */
   getTaskLocator(taskTitle: string, columnName: string): Locator {
     const columnLocator = this.getColumnLocator(columnName);
-    return columnLocator.locator(`div:has(h3:text("${taskTitle}"))`);
+    return columnLocator.locator(`div:has(> h3:text("${taskTitle}"))`);
   }
 
   /**

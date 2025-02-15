@@ -8,5 +8,8 @@
     "@playwright/test": "^1.50.1",
     "@types/node": "^22.13.4"
   },
-  "scripts": {}
+  "scripts": {
+  "test:local": "dotenvx run -f .env.qa.local -- npx playwright test",
+  "test:ci": "dotenvx run -f .env.qa -- npx playwright test"
+}
 }
