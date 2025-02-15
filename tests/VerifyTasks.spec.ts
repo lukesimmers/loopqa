@@ -19,7 +19,7 @@ test.describe('Demo App Task Board Tests', () => {
       await appPage.navigateToSection(testCase.app);
       
       // Use the status field as the column name (default to empty string if undefined).
-      await appPage.verifyTask(testCase.task, testCase.status || '', {
+      await appPage.verifyTask(testCase.task, testCase.status, {
         tags: testCase.tags,
         assignee: testCase.assignee,
         date: testCase.date,

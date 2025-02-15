@@ -14,7 +14,7 @@ export interface LoginCredentials {
   export interface TestCase {
     app: string;
     task: string;
-    status?: string;
+    status: string;
     tags?: string[];
     assignee?: string;
     date?: string;

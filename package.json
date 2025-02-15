@@ -9,7 +9,7 @@
     "@types/node": "^22.13.4"
   },
   "scripts": {
-  "test:local": "dotenvx run -f .env.qa.local -- npx playwright test",
-  "test:ci": "dotenvx run -f .env.qa -- npx playwright test"
+  "test:qa-local": "dotenvx run -f .env.qa.local -- npx playwright test",
+  "test:qa-ci": "dotenvx run -f .env.qa -- npx playwright test"
 }
 }
