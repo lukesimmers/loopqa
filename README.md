@@ -2,8 +2,7 @@
 
 This repository contains a Playwright-driven test suite for a demo application. The tests are data-driven and utilize the Page Object Model (POM) for maintainability and scalability. Test data—including login credentials and test cases—is stored in TypeScript files. Environment variables are managed using dotenvx, allowing different configurations for local development and CI/QA environments.
 
-Table of Contents
------------------
+## Table of Contents
 - [Overview](#overview)
 - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -11,15 +10,13 @@ Table of Contents
 - [Environment Variables](#environment-variables)
   - [Creating and Managing .env Files](#creating-and-managing-env-files)
   - [Running Code Using .env Files](#running-code-using-env-files)
-- [Running Tests Locally](running-tests-locally)
+- [Running Tests Locally](#running-tests-locally)
 - [Adding New Test Cases](#adding-new-test-cases)
 
-Overview
---------
+## Overview
 This test suite verifies key functionalities of the demo application, such as user authentication and task board management. Test cases are defined in the data/testData.ts file and executed in a data-driven manner using Playwright’s test runner.
 
-Setup
------
+## Setup
 ### Prerequisites
 - Node.js (v16 or later recommended)
 - npm (comes with Node.js)
@@ -40,8 +37,7 @@ Setup
    npx playwright install --with-deps
    ```
 
-Environment Variables
----------------------
+## Environment Variables
 This project uses environment variables for configuration (such as login credentials and the base URL). There are two types of environment files:
 
 - Local QA Environment:
@@ -83,8 +79,7 @@ For CI/QA, run:
 
 These commands have been added as npm scripts in your package.json for your convenience.
 
-Running Tests Locally
----------------------
+## Running Tests Locally
 The repository includes npm scripts to run tests with the appropriate environment configuration. In your package.json, you should have:
 
 ```
@@ -105,8 +100,7 @@ To run tests locally:
   npm run test:qa-ci
   ```
 
-Adding New Test Cases
----------------------
+## Adding New Test Cases
 Test cases are defined in the data/testData.ts file. To add a new test case, simply add a new object to the testCases array following the TestCase interface. For example:
 ```
 {
