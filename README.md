@@ -46,9 +46,9 @@ To create a new environment file:
 1. Create a new file named according to the environment. For example, for local prod testing, create a file named .env.prod.
 2. Populate the file with key-value pairs. For example:
    ```
-   ADMIN_USERNAME=your_local_admin_username
-   ADMIN_PASSWORD=your_local_admin_password
-   BASE_URL=https://qa.example.com
+   ADMIN_USERNAME=admin
+   ADMIN_PASSWORD=password123
+   BASE_URL=https://animated-gingersnap-8cf7f2.netlify.app/
    ```
 
 5. Encrypt the file using:
