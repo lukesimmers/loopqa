@@ -36,19 +36,14 @@ This test suite verifies key functionalities of the demo application, such as us
    ```
    npx playwright install --with-deps
    ```
+5. Add the .env.keys file to the root directory.
 
 ## Environment Variables
-This project uses environment variables for configuration (such as login credentials and the base URL). There are two types of environment files:
-
-- Local QA Environment:
-  Use a plaintext file for local testing (e.g., .env.qa.local).
-- CI/QA Environment:
-  Use an encrypted file for CI (e.g., .env.qa), which is decrypted on the CI server.
-  
+This project uses environment variables for configuration (such as login credentials and the base URL). The private key for decryption has been added to the 
 
 ### Creating and Managing .env Files
 To create a new environment file:
-1. Create a new file named according to the environment. For example, for local prod testing, create a file named .env.prod.local.
+1. Create a new file named according to the environment. For example, for local prod testing, create a file named .env.prod.
 2. Populate the file with key-value pairs. For example:
    ```
    ADMIN_USERNAME=your_local_admin_username
@@ -56,48 +51,48 @@ To create a new environment file:
    BASE_URL=https://qa.example.com
    ```
 
-5. (Optional) For CI, you can encrypt the file using:
+5. Encrypt the file using:
 
    ```
-   npx dotenvx encrypt -f .env.qa.local --output .env.qa
+   npx dotenvx encrypt -f .env.prod
    ```
-7. Make sure that any unencrypted files are added to the .gitignore file before pushing changes to main.
+   
+6. Your code should automatically decrypt the environment variables using .env.keys when running the code with the encrypted file. You can also run the code without the .env.keys file by manually passing the encryption key for a given file when running the code. For example:
 
+```
+DOTENV_PRIVATE_KEY_PRODUCTION="bd7c50b352ce23973ec9db355d70212305a0baaade92f0165f02915b213bfbe2" dotenvx run -- node index.js
+```
+
+7. To update or add a new key, you can use the command:
+
+```
+npx dotenvx set <key> <value> -f .env.prod
+```
 
 ### Running Code Using .env Files
 You can use dotenvx to load environment variables from a specific file when running your tests.
-For example, for local qa testing, you can run:
+For example, if you have a .env.keys file for local qa testing, you can run:
 
 ```
-   npx dotenvx run -f .env.qa.local -- npx playwright test
+npx dotenvx run -f .env.qa -- npx playwright test
 ```
 
-For CI/QA, run:
-```
-    npx dotenvx run -f .env.qa -- npx playwright test
-```
-
-These commands have been added as npm scripts in your package.json for your convenience.
+This command has been added as an npm script in your package.json for your convenience.
 
 ## Running Tests Locally
-The repository includes npm scripts to run tests with the appropriate environment configuration. In your package.json, you should have:
+The repository includes an npm script to run tests with the appropriate environment configuration. In your package.json, you should have:
 
 ```
 "scripts": 
 {
-  "test:qa-local": "dotenvx run -f .env.qa.local -- npx playwright test",
-  "test:qa-ci": "dotenvx run -f .env.qa -- npx playwright test"
+  "test:qa": "dotenvx run -f .env.qa -- npx playwright test",
 }
 ```
 
 To run tests locally:
-- For local QA testing:
+- For QA testing:
   ```
-  npm run test:qa-local
-  ```
-- For simulating CI/QA:
-  ```
-  npm run test:qa-ci
+  npm run test:qa
   ```
 
 ## Adding New Test Cases
