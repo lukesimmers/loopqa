@@ -32,4 +32,4 @@ jobs:
       - name: Run Playwright tests
         run: npm run test:qa
         env:
-          DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_QA }}
+          DOTENV_PRIVATE_KEY_QA: ${{ secrets.DOTENV_PRIVATE_KEY_QA }}
