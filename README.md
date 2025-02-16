@@ -39,7 +39,7 @@ This test suite verifies key functionalities of the demo application, such as us
 5. Add the .env.keys file to the root directory.
 
 ## Environment Variables
-This project uses environment variables for configuration (such as login credentials and the base URL). The private key for decryption has been added to the 
+This project uses environment variables for configuration (such as login credentials and the base URL).
 
 ### Creating and Managing .env Files
 To create a new environment file:
