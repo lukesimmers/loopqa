@@ -60,7 +60,7 @@ To create a new environment file:
 6. Your code should automatically decrypt the environment variables using .env.keys when running the code with the encrypted file. You can also run the code without the .env.keys file by manually passing the encryption key for a given file when running the code. For example:
 
 ```
-DOTENV_PRIVATE_KEY_PRODUCTION="bd7c50b352ce23973ec9db355d70212305a0baaade92f0165f02915b213bfbe2" dotenvx run -- node index.js
+DOTENV_PRIVATE_KEY_PRODUCTION="bd7c50b352ce23973ec9db355d70212305a0baaade92f0165f02915b213bfbe2" dotenvx run -- npx playwright test
 ```
 
 7. To update or add a new key, you can use the command:
