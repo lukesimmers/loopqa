@@ -56,11 +56,13 @@ To create a new environment file:
    ```
    npx dotenvx encrypt -f .env.prod
    ```
+
+6. Add the private key as an environment variable in the .yml file and add the private key to the repository secrets for Github Actions.
    
-6. Your code should automatically decrypt the environment variables using .env.keys when running the code with the encrypted file. You can also run the code without the .env.keys file by manually passing the encryption key for a given file when running the code. For example:
+7. Your code should automatically decrypt the environment variables using .env.keys when running the code with the encrypted file. You can also run the code without the .env.keys file by manually passing the encryption key for a given file when running the code. For example:
 
 ```
-DOTENV_PRIVATE_KEY_PRODUCTION="bd7c50b352ce23973ec9db355d70212305a0baaade92f0165f02915b213bfbe2" dotenvx run -- npx playwright test
+DOTENV_PRIVATE_KEY_PRODUCTION="bd7c50b352ce23973ec9db355d70212305a0baaade92f0165f02915b213bfbe2" npx dotenvx run -f .env.prod-- npx playwright test
 ```
 
 7. To update or add a new key, you can use the command:
